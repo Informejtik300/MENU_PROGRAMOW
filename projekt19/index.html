@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Przełączanie obramowania</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <legend>Dostępne obrazki</legend>
+                Natura:<input type="checkbox" id="natura"><br>
+                Sport:<input type="checkbox" id="sport"><br>
+                Sztuka:<input type="checkbox" id="sztuka">
+            </fieldset>
+            Obramowanie:<input type="checkbox" id="border"> Gróbość:<input type="number" value="2" id="grobosc"> Kolor:<input type="color" id="kolor"><br>
+            Szerokość:<input type="number" value="200" id="szerokosc"> Wysokość:<input type="number" value="300" id="wysokosc"><br>
+            <img src="grafika1.jpg" alt="Natura" id="obraz_n" class="obraz" style="width: 200px; height: 300px; display: none;">
+            <img src="grafika2.jpg" alt="Sport" id="obraz_s" class="obraz" style="width: 200px; height: 300px; display: none;">
+            <img src="grafika3.jpg" alt="Sztuka" id="obraz_sz" class="obraz" style="width: 200px; height: 300px; display: none;">
+            <script>
+                //obrazy
+                document.getElementById('natura').addEventListener("change", function(){
+                    var naturaON = document.getElementById('natura').checked;
+                    if (naturaON) {
+                        document.getElementById('obraz_n').style.display = "block";
+                    } else {
+                        document.getElementById('obraz_n').style.display = "none";
+                    }
+                })
+                document.getElementById('sport').addEventListener("change", function(){
+                    var sportON = document.getElementById('sport').checked;
+                    if (sportON) {
+                        document.getElementById('obraz_s').style.display = "block";
+                    } else {
+                        document.getElementById('obraz_s').style.display = "none";
+                    }
+                })
+                document.getElementById('sztuka').addEventListener("change", function(){
+                    var sztukaON = document.getElementById('sztuka').checked;
+                    if (sztukaON) {
+                        document.getElementById('obraz_sz').style.display = "block";
+                    } else {
+                        document.getElementById('obraz_sz').style.display = "none";
+                    }
+                })
+
+                //obramowanie
+                document.getElementById('border').addEventListener("change", obramowanie);
+                document.getElementById('grobosc').addEventListener("change", obramowanie);
+                document.getElementById('kolor').addEventListener("change", obramowanie);
+                function obramowanie() {
+                    var ramka = document.getElementById('border').checked;
+                    var grobosc = document.getElementById('grobosc').value;
+                    var kolor = document.getElementById('kolor').value;
+                    if (ramka) {
+                        document.getElementById('obraz_n','obraz_s').style.border = `${grobosc}px solid ${kolor}`;
+                    } else {
+                        document.getElementById('obraz_n').style.border = "none";
+                    }
+                }
+
+                //wysokość i szerokość
+                var szerokosc;
+                var wysokosc
+                document.getElementById('szerokosc').addEventListener("change", function(){
+                    szerokosc = document.getElementById('szerokosc').value;
+                    obliczania = szerokosc / 2;
+                    wysokosc = obliczania * 3;
+                    document.getElementById('wysokosc').value = wysokosc;
+                    skalowanie();
+                });
+                document.getElementById('wysokosc').addEventListener("change", function(){
+                    wysokosc = document.getElementById('wysokosc').value;
+                    obliczania = wysokosc / 3;
+                    szerokosc = obliczania * 2;
+                    document.getElementById('szerokosc').value = szerokosc;
+                    skalowanie();
+                });
+                function skalowanie() {
+                    document.getElementById('obraz').style.width = `${szerokosc}px`;
+                    document.getElementById('obraz').style.height = `${wysokosc}px`;
+                }
+            </script>
+        </div>
+    </body>
+</html>

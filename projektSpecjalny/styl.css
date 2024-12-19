@@ -1,0 +1,53 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+}
+#logowanie{
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    padding: 10px;
+    padding-top: 30px;
+    background-color: #f09000;
+    border-radius: 20px;
+    width: 180px;
+    height: 100px;
+}
+.przyciskiLogin{
+    background-color: #7e4b00;
+    color: #ebebeb;
+    border-radius: 20px;
+    margin: 5px;
+}
+#strona{
+    width: 60%;
+    margin: auto;
+}
+header{
+    height: 140px;
+}
+#p_lewy, #p_srodkowy, #p_prawy{
+    background-color: #f09000;
+    height: 500px;
+    float: left;
+}
+#p_prawy{
+    width: 25%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#p_srodkowy{
+    width: 50%;
+}
+#p_lewy{
+    width: 25%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+footer{
+    background-color: #ceb900;
+    border-radius: 20px;
+    height: 50px;
+    clear: both;
+}

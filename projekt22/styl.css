@@ -1,0 +1,87 @@
+body{
+    background-color: #cacaca;
+}
+table{
+    margin: auto;
+    width: 30%;
+    text-align: center;
+    border-collapse: collapse;
+}
+td,th{
+    border: black solid 1px;
+}
+#pasek_zew{
+    height: 10px;
+    margin: 4px;
+    border-radius: 20px;
+    border: black solid 1px;
+}
+#pasek_wew{
+    background-color: #11c900;
+    height: 10px;
+    border-radius: 20px;
+}
+button{
+    background-color: #000000;
+    color: #e9e9e9;
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+    font-size: 120%;
+}
+.nacisnij{
+    display: table-row;
+}
+.hidden {
+    display: none;
+}
+input{
+    width: 80%;
+    height: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+.wpisz{
+    display: none;
+}
+.wpisz.visible{
+    display: table-row;
+}
+.toggle-checkbox {
+    display: none; 
+}
+
+.toggle-label {
+    margin-top: 3px;
+    position: relative;
+    display: inline-block;
+    width: 40px; 
+    height: 20px; 
+    background-color: #cacaca; 
+    border-radius: 30px; 
+    border: 2px solid #000;
+    cursor: pointer; 
+    transition: background-color 0.2s; 
+    color: #cacaca;
+    user-select: none;
+}
+
+.toggle-label:before {
+    content: '';
+    position: absolute;
+    width: 16px; 
+    height: 16px; 
+    background-color: #000; 
+    border-radius: 50%;
+    left: 2px;
+    bottom: 2px;
+    transition: transform 0.2s;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #cacaca;
+}
+
+.toggle-checkbox:checked + .toggle-label:before {
+    transform: translateX(20px);
+}

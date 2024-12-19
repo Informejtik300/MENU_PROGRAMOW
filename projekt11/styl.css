@@ -1,0 +1,22 @@
+body{
+    background-color: #aaaaaa;
+}
+div{
+    margin: auto;
+    padding-top: 30px;
+    background-color: #009b00de;
+    width: 700px;
+    height: 260px;
+}
+table{
+    margin: auto;
+    width: 70%;
+    border-collapse: collapse;
+}
+td,th{
+    padding: 4px;
+    border: 2px solid black;
+}
+.text{
+    background-color: #aaaaaa;
+}

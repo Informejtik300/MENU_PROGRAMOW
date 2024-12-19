@@ -1,0 +1,46 @@
+body{
+    background-color: #cecece;
+    text-align: center;
+    font-size: 20px;
+}
+
+div{
+    margin: auto;
+    width: 1050px;
+}
+#div{
+    display: flex;
+}
+
+header{
+    background-color: #008b8b;
+}
+h1{
+    margin-bottom: 0px;
+}
+
+#p_lewy{
+    background-color: #008b8b;
+    border-bottom: 30px solid #008b8b;
+    width: 30%;
+    float: left;
+}
+h2{
+    margin-top: 0px;
+}
+
+#p_prawy1, #p_prawy2{
+    background-color: #00b4b4;
+    border-bottom: 30px solid #008b8b;
+    width: 70%;
+    float: left;
+}
+.klawiatura{
+    background-color: #00b4b4;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+#zero{
+    width: 105px;
+}

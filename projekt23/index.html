@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST Ramka do obrazka</title>
+        <meta charset="UTF-8">
+        <style>
+            div{
+                margin: auto;
+                width: 30%;
+                clear: both;
+            }
+            nav, section{
+                width: 50%;
+                height: 500px;
+                float: left;
+            }
+            img{
+                padding: 5px;
+                margin-top: 10px;
+            }
+            input{
+                border-radius: 20px;
+                background-color: #b1b1b1;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <nav>
+                <input type="checkbox" id="ramka">
+                <input type="color" id="kolor">
+                <select id="grubosc">
+                    <option value="1">1px</option>
+                    <option value="2">2px</option>
+                    <option value="4">4px</option>
+                    <option value="8">8px</option>
+                    <option value="10">10px</option>
+                </select>
+            </nav>
+            <section>
+                <img src="obrazek.jpg" alt="Obrazek" id="obraz">
+            </section>
+            <script>
+                document.getElementById('ramka').addEventListener('change', obramowanie());
+                document.getElementById('kolor').addEventListener('change', obramowanie());
+                document.getElementById('grubosc').addEventListener('change', obramowanie());
+                
+                function obramowanie(){
+                    var grubosc = document.getElementById('grubosc').value;
+                    var kolor = document.getElementById('kolor').value;
+                    if (document.getElementById('ramka').checked){
+                        document.getElementById('obraz').style.border = grubosc + 'px solid' + kolor;
+                    } else {
+                        document.getElementById('obraz').style.border = 'none';
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

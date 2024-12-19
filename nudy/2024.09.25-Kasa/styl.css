@@ -1,0 +1,68 @@
+body{
+    background-color: #cecece;
+    text-align: center;
+    font-size: 20px;
+}
+
+div{
+    margin: auto;
+    width: 1050px;
+}
+#div{
+    display: flex;
+}
+
+header{
+    background-color: #008b8b;
+}
+h1{
+    margin-bottom: 0px;
+}
+
+#p_lewy{
+    background-color: #008b8b;
+    border-bottom: 30px solid #008b8b;
+    width: 30%;
+    float: left;
+}
+h2{
+    margin-top: 0px;
+}
+.menu_button{
+    width: 130px;
+}
+
+#p_prawy1, #p_prawy2{
+    background-color: #00b4b4;
+    border-bottom: 30px solid #008b8b;
+    width: 70%;
+    float: left;
+}
+.wyswietlacz{
+    margin-left: 3px;
+    width: 132px;
+    height: 30px;
+    font-size: 25px;
+    text-align: right;
+}
+.wyswietlacz::-webkit-outer-spin-button,
+.wyswietlacz::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.klawiatura{
+    background-color: #00b4b4;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+#zero{
+    width: 93px;
+}
+.usun{
+    background-color: #00b4b4;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: black;
+}

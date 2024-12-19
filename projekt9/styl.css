@@ -1,0 +1,18 @@
+body{
+    background-color: #7e7e7e;
+}
+div{
+    width: 600px;
+    text-align: center;
+    margin: auto;
+}
+section{
+    background-color: #00c4c4;
+    border: 2px solid black;
+    border-radius: 25%;
+    width: 100px;
+    height: 120px;
+    margin: 5px;
+    padding-top: 10px;
+    float: left;
+}

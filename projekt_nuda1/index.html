@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liczenie pieniędzy</title>
+        <meta charset="utf-8">
+        <meta name="description" content="BETA v1.4">
+        <link rel="stylesheet" href="styl.css">
+    </head>
+    <body>
+        <div id="kontener1">
+            <header>
+                <h1>Licznik pieniędzy</h1>
+            </header>
+            <section id="menu">
+                <h2>MENU</h2>
+                <button class="menu" onclick="menu1()">Strona główna</button>
+                <button class="menu" onclick="menu2()">Strona druga</button>
+                <script>
+                    function menu1(){
+                        document.getElementById("str1").style.display="block";
+                        document.getElementById("str2").style.display="none";
+                    }
+                    function menu2(){
+                        document.getElementById("str2").style.display="block";
+                        document.getElementById("str1").style.display="none";
+                    }
+                </script>
+            </section>
+            <section class="strony" id="str1">
+                <table>
+                    <tr><td>
+                        <table>
+                            <tr><td><b>Ilość 500zł:</b></td><td><button class="przyciski" id="plus500">+</button></td><td><input class="wynik" id="wynik500" type="number"></td><td><button class="przyciski" id="minus500">-</button></td></tr>
+                            <tr><td><b>Ilość 200zł:</b></td><td><button class="przyciski" id="plus200">+</button></td><td><input class="wynik" id="wynik200" type="number"></td><td><button class="przyciski" id="minus200">-</button></td></tr>
+                            <tr><td><b>Ilość 100zł:</b></td><td><button class="przyciski" id="plus100">+</button></td><td><input class="wynik" id="wynik100" type="number"></td><td><button class="przyciski" id="minus100">-</button></td></tr>
+                            <tr><td><b>Ilość 50zł:</b></td><td><button class="przyciski" id="plus50">+</button></td><td><input class="wynik" id="wynik50" type="number"></td><td><button class="przyciski" id="minus50">-</button></td></tr>
+                            <tr><td><b>Ilość 20zł:</b></td><td><button class="przyciski" id="plus20">+</button></td><td><input class="wynik" id="wynik20" type="number"></td><td><button class="przyciski" id="minus20">-</button></td></tr>
+                            <tr><td><b>Ilość 10zł:</b></td><td><button class="przyciski" id="plus10">+</button></td><td><input class="wynik" id="wynik10" type="number"></td><td><button class="przyciski" id="minus10">-</button></td></tr>
+                            <tr><td><b>Ilość 5zł:</b></td><td><button class="przyciski" id="plus5">+</button></td><td><input class="wynik" id="wynik5" type="number"></td><td><button class="przyciski" id="minus5">-</button></td></tr>
+                            <tr><td><b>Ilość 2zł:</b></td><td><button class="przyciski" id="plus2">+</button></td><td><input class="wynik" id="wynik2" type="number"></td><td><button class="przyciski" id="minus2">-</button></td></tr>
+                            <tr><td><b>Ilość 1zł:</b></td><td><button class="przyciski" id="plus1">+</button></td><td><input class="wynik" id="wynik1" type="number"></td><td><button class="przyciski" id="minus1">-</button></td></tr>
+                            <tr><td><b>Ilość 50gr:</b></td><td><button class="przyciski" id="plus0_50">+</button></td><td><input class="wynik" id="wynik0_50" type="number"></td><td><button class="przyciski" id="minus0_50">-</button></td></tr>
+                            <tr><td><b>Ilość 20gr:</b></td><td><button class="przyciski" id="plus0_20">+</button></td><td><input class="wynik" id="wynik0_20" type="number"></td><td><button class="przyciski" id="minus0_20">-</button></td></tr>
+                            <tr><td><b>Ilość 10gr:</b></td><td><button class="przyciski" id="plus0_10">+</button></td><td><input class="wynik" id="wynik0_10" type="number"></td><td><button class="przyciski" id="minus0_10">-</button></td></tr>
+                            <tr><td><b>Ilość 5gr:</b></td><td><button class="przyciski" id="plus0_5">+</button></td><td><input class="wynik" id="wynik0_5" type="number"></td><td><button class="przyciski" id="minus0_5">-</button></td></tr>
+                            <tr><td><b>Ilość 2gr:</b></td><td><button class="przyciski" id="plus0_2">+</button></td><td><input class="wynik" id="wynik0_2" type="number"></td><td><button class="przyciski" id="minus0_2">-</button></td></tr>
+                            <tr><td><b>Ilość 1gr:</b></td><td><button class="przyciski" id="plus0_1">+</button></td><td><input class="wynik" id="wynik0_1" type="number"></td><td><button class="przyciski" id="minus0_1">-</button></td></tr>
+                            <tr><td></td><td colspan="3"><button id="reset" onclick="reset()">ZERUJ</button></td></tr>
+                        </table>
+                    </td><td>
+                        <table>
+                            <tr><td>Wyznacz cel do osiągnięcia</td></tr>
+                            <tr><td><input class="sg_p" id="pieniadze_cel" type="number"></td></tr>
+                            <tr><td><input class="sg_p" id="pieniadze_cel_tak-nie" type="text" value="Cel został zaspokojony" readonly></td></tr>
+                            <tr><td>Łączna wartość pieniędzy</td></tr>
+                            <tr><td><input class="sg_p" id="pieniadze_suma" type="number" readonly></td></tr>
+                        </table>
+                        <script>
+                            //ilość
+                            document.getElementById("wynik500").addEventListener("input", function(){
+                                let wynik500 = parseInt(document.getElementById("wynik500").value)
+                                if (wynik500<0 || isNaN(wynik500))
+                                    document.getElementById("wynik500").value=0});
+                            document.getElementById("wynik200").addEventListener("input", function(){
+                                let wynik200 = parseInt(document.getElementById("wynik200").value)
+                                if (wynik200<0 || isNaN(wynik200))
+                                    document.getElementById("wynik200").value=0});
+                            document.getElementById("wynik100").addEventListener("input", function(){
+                                let wynik100 = parseInt(document.getElementById("wynik100").value)
+                                if (wynik100<0 || isNaN(wynik100))
+                                    document.getElementById("wynik100").value=0});
+                            document.getElementById("wynik50").addEventListener("input", function(){
+                                let wynik50 = parseInt(document.getElementById("wynik50").value)
+                                if (wynik50<0 || isNaN(wynik50))
+                                    document.getElementById("wynik50").value=0});
+                            document.getElementById("wynik20").addEventListener("input", function(){
+                                let wynik20 = parseInt(document.getElementById("wynik20").value)
+                                if (wynik20<0 || isNaN(wynik20))
+                                    document.getElementById("wynik20").value=0});
+                            document.getElementById("wynik10").addEventListener("input", function(){
+                                let wynik10 = parseInt(document.getElementById("wynik10").value)
+                                if (wynik10<0 || isNaN(wynik10))
+                                    document.getElementById("wynik10").value=0});
+                            document.getElementById("wynik5").addEventListener("input", function(){
+                                let wynik5 = parseInt(document.getElementById("wynik5").value)
+                                if (wynik5<0 || isNaN(wynik5))
+                                    document.getElementById("wynik5").value=0});
+                            document.getElementById("wynik2").addEventListener("input", function(){
+                                let wynik2 = parseInt(document.getElementById("wynik2").value)
+                                if (wynik2<0 || isNaN(wynik2))
+                                    document.getElementById("wynik2").value=0});
+                            document.getElementById("wynik1").addEventListener("input", function(){
+                                let wynik1 = parseInt(document.getElementById("wynik1").value)
+                                if (wynik1<0 || isNaN(wynik1))
+                                    document.getElementById("wynik1").value=0});
+                            document.getElementById("wynik0_50").addEventListener("input", function(){
+                                let wynik0_50 = parseInt(document.getElementById("wynik0_50").value)
+                                if (wynik0_50<0 || isNaN(wynik0_50))
+                                    document.getElementById("wynik0_50").value=0});
+                            document.getElementById("wynik0_20").addEventListener("input", function(){
+                                let wynik0_20 = parseInt(document.getElementById("wynik0_20").value)
+                                if (wynik0_20<0 || isNaN(wynik0_20))
+                                    document.getElementById("wynik0_20").value=0});
+                            document.getElementById("wynik0_10").addEventListener("input", function(){
+                                let wynik0_10 = parseInt(document.getElementById("wynik0_10").value)
+                                if (wynik0_10<0 || isNaN(wynik0_10))
+                                    document.getElementById("wynik0_10").value=0});
+                            document.getElementById("wynik0_5").addEventListener("input", function(){
+                                let wynik0_5 = parseInt(document.getElementById("wynik0_5").value)
+                                if (wynik0_5<0 || isNaN(wynik0_5))
+                                    document.getElementById("wynik0_5").value=0});
+                            document.getElementById("wynik0_2").addEventListener("input", function(){
+                                let wynik0_2 = parseInt(document.getElementById("wynik0_2").value)
+                                if (wynik0_2<0 || isNaN(wynik0_2))
+                                    document.getElementById("wynik0_2").value=0});
+                            document.getElementById("wynik0_1").addEventListener("input", function(){
+                                let wynik0_1 = parseInt(document.getElementById("wynik0_1").value)
+                                if (wynik0_1<0 || isNaN(wynik0_1))
+                                    document.getElementById("wynik0_1").value=0});
+                            //cel i sprawdzenie sumy
+                            let pieniadze_suma = 0;
+                            document.getElementById("pieniadze_cel").value = 0;
+                            document.getElementById("pieniadze_suma").value = 0;
+                            document.getElementById("pieniadze_cel").addEventListener("input", function(){
+                                let cel_zbierania = parseInt(document.getElementById("pieniadze_cel").value);
+                                if (isNaN(cel_zbierania) || cel_zbierania < 0) {
+                                    document.getElementById("pieniadze_cel").value = 0;
+                                    cel_zbierania = 0;
+                                }
+                                //cel osiągnięty? 1
+                                if (cel_zbierania <= pieniadze_suma) {
+                                    document.getElementById("pieniadze_cel_tak-nie").value = "Cel został zaspokojony";
+                                    document.getElementById("pieniadze_cel_tak-nie").style.backgroundColor = '#00ca1b';
+                                } else {
+                                    document.getElementById("pieniadze_cel_tak-nie").value = "Cel nie został zaspokojony";
+                                    document.getElementById("pieniadze_cel_tak-nie").style.backgroundColor = '#ca0000';
+                                }
+                            });
+                            function sprawdzanie_celu(){
+                                pieniadze_suma = parseInt(document.getElementById("pieniadze_suma").value);
+                                if (isNaN(pieniadze_suma) || pieniadze_suma < 0) {
+                                    document.getElementById("pieniadze_suma").value = 0;
+                                    pieniadze_suma = 0;
+                                }
+                                //cel osiągnięty? 2
+                                let cel_zbierania = parseInt(document.getElementById("pieniadze_cel").value);
+                                if (cel_zbierania <= pieniadze_suma) {
+                                    document.getElementById("pieniadze_cel_tak-nie").value = "Cel został zaspokojony";
+                                    document.getElementById("pieniadze_cel_tak-nie").style.backgroundColor = '#00ca1b';
+                                } else {
+                                    document.getElementById("pieniadze_cel_tak-nie").value = "Cel nie został zaspokojony";
+                                document.getElementById("pieniadze_cel_tak-nie").style.backgroundColor = '#ca0000';
+                                }
+                            }
+                            //obliczenia sumy i autoaktualizacje
+                            function przeliczSume() {
+                                let suma = 0;
+                                suma += parseInt(document.getElementById("wynik500").value) * 500 || 0;
+                                suma += parseInt(document.getElementById("wynik200").value) * 200 || 0;
+                                suma += parseInt(document.getElementById("wynik100").value) * 100 || 0;
+                                suma += parseInt(document.getElementById("wynik50").value) * 50 || 0;
+                                suma += parseInt(document.getElementById("wynik20").value) * 20 || 0;
+                                suma += parseInt(document.getElementById("wynik10").value) * 10 || 0;
+                                suma += parseInt(document.getElementById("wynik5").value) * 5 || 0;
+                                suma += parseInt(document.getElementById("wynik2").value) * 2 || 0;
+                                suma += parseInt(document.getElementById("wynik1").value) * 1 || 0;
+                                suma += parseInt(document.getElementById("wynik0_50").value) * 0.5 || 0;
+                                suma += parseInt(document.getElementById("wynik0_20").value) * 0.2 || 0;
+                                suma += parseInt(document.getElementById("wynik0_10").value) * 0.1 || 0;
+                                suma += parseInt(document.getElementById("wynik0_5").value) * 0.05 || 0;
+                                suma += parseInt(document.getElementById("wynik0_2").value) * 0.02 || 0;
+                                suma += parseInt(document.getElementById("wynik0_1").value) * 0.01 || 0;
+                                document.getElementById("pieniadze_suma").value = suma.toFixed(2);
+                                sprawdzanie_celu();
+                            }
+                            document.querySelectorAll(".wynik").forEach(function(element) {
+                                element.addEventListener("input", przeliczSume)});
+                            document.querySelectorAll(".przyciski").forEach(function(element) {
+                                element.addEventListener("click", function(){setTimeout(przeliczSume, 200)})});
+                        </script>
+                    </td></tr>
+                </table>
+                <script>
+                    //-------------------------------LICZBA PIENIĘDZY--------------------------------------
+                    function reset(){
+                        document.getElementById("wynik500").value=0;
+                        document.getElementById("wynik200").value=0;
+                        document.getElementById("wynik100").value=0;
+                        document.getElementById("wynik50").value=0;
+                        document.getElementById("wynik20").value=0;
+                        document.getElementById("wynik10").value=0;
+                        document.getElementById("wynik5").value=0;
+                        document.getElementById("wynik2").value=0;
+                        document.getElementById("wynik1").value=0;
+                        document.getElementById("wynik0_50").value=0;
+                        document.getElementById("wynik0_20").value=0;
+                        document.getElementById("wynik0_10").value=0;
+                        document.getElementById("wynik0_5").value=0;
+                        document.getElementById("wynik0_2").value=0;
+                        document.getElementById("wynik0_1").value=0;
+                        przeliczSume();
+                    }
+                    reset();
+                    
+                    //ilość 500 ------------------------------------------------------------------
+                    document.getElementById("plus500").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik500").value);
+                        document.getElementById("wynik500").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus500").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik500").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik500").value=wartoscTeraz-1;
+                    })
+                    //ilość 200 ------------------------------------------------------------------
+                    document.getElementById("plus200").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik200").value);
+                        document.getElementById("wynik200").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus200").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik200").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik200").value=wartoscTeraz-1;
+                    })
+                    //ilość 100 ------------------------------------------------------------------
+                    document.getElementById("plus100").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik100").value);
+                        document.getElementById("wynik100").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus100").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik100").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik100").value=wartoscTeraz-1;
+                    })
+                    //ilość 50 -------------------------------------------------------------------
+                    document.getElementById("plus50").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik50").value);
+                        document.getElementById("wynik50").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus50").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik50").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik50").value=wartoscTeraz-1;
+                    })
+                    //ilość 20 ------------------------------------------------------------------
+                    document.getElementById("plus20").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik20").value);
+                        document.getElementById("wynik20").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus20").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik20").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik20").value=wartoscTeraz-1;
+                    })
+                    //ilość 10 ------------------------------------------------------------------
+                    document.getElementById("plus10").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik10").value);
+                        document.getElementById("wynik10").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus10").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik10").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik10").value=wartoscTeraz-1;
+                    })
+                    //ilość 5 ------------------------------------------------------------------
+                    document.getElementById("plus5").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik5").value);
+                        document.getElementById("wynik5").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus5").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik5").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik5").value=wartoscTeraz-1;
+                    })
+                    //ilość 2 ------------------------------------------------------------------
+                    document.getElementById("plus2").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik2").value);
+                        document.getElementById("wynik2").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus2").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik2").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik2").value=wartoscTeraz-1;
+                    })
+                    //ilość 1 ------------------------------------------------------------------
+                    document.getElementById("plus1").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik1").value);
+                        document.getElementById("wynik1").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus1").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik1").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik1").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.50 ------------------------------------------------------------------
+                    document.getElementById("plus0_50").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_50").value);
+                        document.getElementById("wynik0_50").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_50").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_50").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_50").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.20 ------------------------------------------------------------------
+                    document.getElementById("plus0_20").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_20").value);
+                        document.getElementById("wynik0_20").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_20").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_20").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_20").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.10 ------------------------------------------------------------------
+                    document.getElementById("plus0_10").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_10").value);
+                        document.getElementById("wynik0_10").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_10").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_10").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_10").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.5 ------------------------------------------------------------------
+                    document.getElementById("plus0_5").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_5").value);
+                        document.getElementById("wynik0_5").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_5").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_5").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_5").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.2 ------------------------------------------------------------------
+                    document.getElementById("plus0_2").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_2").value);
+                        document.getElementById("wynik0_2").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_2").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_2").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_2").value=wartoscTeraz-1;
+                    })
+                    //ilość 0.1 ------------------------------------------------------------------
+                    document.getElementById("plus0_1").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_1").value);
+                        document.getElementById("wynik0_1").value=wartoscTeraz+1;
+                    })
+                    document.getElementById("minus0_1").addEventListener("click", function(){
+                        let wartoscTeraz = parseInt(document.getElementById("wynik0_1").value);
+                        if(wartoscTeraz>0)
+                            document.getElementById("wynik0_1").value=wartoscTeraz-1;
+                    })
+                </script>
+            </section>
+            <section class="strony" id="str2">
+                strona 2
+            </section>
+        </div>
+        <p>v.1.4</p>
+    </body>
+</html>

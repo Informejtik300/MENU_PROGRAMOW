@@ -1,0 +1,10 @@
+body{
+    background-color: #d3d3d3;
+}
+fieldset{
+    margin: auto;
+    width: 30%;
+}
+input{
+    margin: 7px;
+}

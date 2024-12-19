@@ -1,0 +1,28 @@
+header{
+    background-color: #0B873D;
+    color: white;
+    font-size: 150%;
+    text-align: center;
+}
+#p_lewy{
+    background-color: #8CE1AE;
+    width: 40%;
+    height: 600px;
+    float: left;
+}
+#p_srodkowy{
+    background-color: #5CCB89;
+    width: 40%;
+    height: 600px;
+    float: left;
+}
+#p_prawy{
+    background-color: #1DA956;
+    width: 20%;
+    height: 600px;
+    float: left;
+}
+ul{
+    margin: 20px;
+    list-style-image:url(auto.png);
+}
